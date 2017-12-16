@@ -1,0 +1,1270 @@
+{
+"info": {
+"totalrecordsperquery": 100,
+"totalrecords": 2746,
+"pages": 1,
+"page": 1
+},
+"records": [
+{
+"name": "user 1",
+"places": {
+"latitude": 39.97779,
+"longitude": 116.340965
+},
+"date": "16/12/2008",
+"time": "01:00:33"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.980635,
+"longitude": 116.344106
+},
+"date": "16/12/2008",
+"time": "01:05:23"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.980928,
+"longitude": 116.345811
+},
+"date": "16/12/2008",
+"time": "01:07:43"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982345,
+"longitude": 116.345531
+},
+"date": "16/12/2008",
+"time": "03:42:56"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982379,
+"longitude": 116.344465
+},
+"date": "16/12/2008",
+"time": "03:45:01"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981862,
+"longitude": 116.340291
+},
+"date": "16/12/2008",
+"time": "03:49:11"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981862,
+"longitude": 116.340291
+},
+"date": "16/12/2008",
+"time": "03:49:11"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.98118,
+"longitude": 116.338813
+},
+"date": "16/12/2008",
+"time": "03:55:06"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.980509,
+"longitude": 116.339637
+},
+"date": "16/12/2008",
+"time": "04:11:36"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981532,
+"longitude": 116.343793
+},
+"date": "16/12/2008",
+"time": "04:16:06"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.980736,
+"longitude": 116.346284
+},
+"date": "16/12/2008",
+"time": "04:18:56"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981638,
+"longitude": 116.342509
+},
+"date": "16/12/2008",
+"time": "09:33:42"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981323,
+"longitude": 116.339833
+},
+"date": "16/12/2008",
+"time": "09:36:02"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981429,
+"longitude": 116.338837
+},
+"date": "16/12/2008",
+"time": "09:40:02"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981167,
+"longitude": 116.340839
+},
+"date": "16/12/2008",
+"time": "09:44:07"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982044,
+"longitude": 116.336765
+},
+"date": "16/12/2008",
+"time": "10:14:37"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982108,
+"longitude": 116.339483
+},
+"date": "16/12/2008",
+"time": "10:19:32"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981876,
+"longitude": 116.343213
+},
+"date": "16/12/2008",
+"time": "10:24:47"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.980496,
+"longitude": 116.346278
+},
+"date": "16/12/2008",
+"time": "10:28:42"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.980361,
+"longitude": 116.346059
+},
+"date": "16/12/2008",
+"time": "10:39:37"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981733,
+"longitude": 116.346542
+},
+"date": "16/12/2008",
+"time": "10:43:37"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.983078,
+"longitude": 116.341467
+},
+"date": "16/12/2008",
+"time": "10:47:12"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981833,
+"longitude": 116.346131
+},
+"date": "16/12/2008",
+"time": "10:50:22"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981891,
+"longitude": 116.346659
+},
+"date": "16/12/2008",
+"time": "10:56:07"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981739,
+"longitude": 116.346252
+},
+"date": "16/12/2008",
+"time": "10:59:27"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981535,
+"longitude": 116.345977
+},
+"date": "16/12/2008",
+"time": "11:04:42"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981593,
+"longitude": 116.344799
+},
+"date": "16/12/2008",
+"time": "11:08:32"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981692,
+"longitude": 116.346153
+},
+"date": "16/12/2008",
+"time": "11:15:17"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981837,
+"longitude": 116.346385
+},
+"date": "16/12/2008",
+"time": "11:19:52"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981993,
+"longitude": 116.346277
+},
+"date": "16/12/2008",
+"time": "11:25:22"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981963,
+"longitude": 116.346136
+},
+"date": "16/12/2008",
+"time": "11:30:12"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981698,
+"longitude": 116.346197
+},
+"date": "16/12/2008",
+"time": "11:34:52"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982106,
+"longitude": 116.346268
+},
+"date": "16/12/2008",
+"time": "11:43:47"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981764,
+"longitude": 116.346204
+},
+"date": "16/12/2008",
+"time": "11:47:02"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.98179,
+"longitude": 116.346159
+},
+"date": "16/12/2008",
+"time": "11:50:22"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982035,
+"longitude": 116.346507
+},
+"date": "16/12/2008",
+"time": "11:55:42"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981934,
+"longitude": 116.346205
+},
+"date": "16/12/2008",
+"time": "11:59:07"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982089,
+"longitude": 116.346076
+},
+"date": "16/12/2008",
+"time": "12:06:57"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981673,
+"longitude": 116.346023
+},
+"date": "16/12/2008",
+"time": "12:10:12"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981819,
+"longitude": 116.346374
+},
+"date": "16/12/2008",
+"time": "12:15:07"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981902,
+"longitude": 116.345951
+},
+"date": "16/12/2008",
+"time": "12:25:17"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982003,
+"longitude": 116.346198
+},
+"date": "16/12/2008",
+"time": "12:30:12"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981681,
+"longitude": 116.346355
+},
+"date": "16/12/2008",
+"time": "12:34:57"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982048,
+"longitude": 116.34626
+},
+"date": "16/12/2008",
+"time": "12:39:17"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981851,
+"longitude": 116.346067
+},
+"date": "16/12/2008",
+"time": "12:49:02"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981811,
+"longitude": 116.346196
+},
+"date": "16/12/2008",
+"time": "12:52:32"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981916,
+"longitude": 116.346162
+},
+"date": "16/12/2008",
+"time": "12:55:12"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981815,
+"longitude": 116.346327
+},
+"date": "16/12/2008",
+"time": "13:07:12"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982192,
+"longitude": 116.345859
+},
+"date": "16/12/2008",
+"time": "13:09:17"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981719,
+"longitude": 116.346149
+},
+"date": "16/12/2008",
+"time": "13:13:07"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981804,
+"longitude": 116.346198
+},
+"date": "16/12/2008",
+"time": "13:17:17"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981758,
+"longitude": 116.345713
+},
+"date": "16/12/2008",
+"time": "13:23:37"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982043,
+"longitude": 116.345931
+},
+"date": "16/12/2008",
+"time": "13:28:07"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981789,
+"longitude": 116.346369
+},
+"date": "16/12/2008",
+"time": "13:31:32"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981755,
+"longitude": 116.346179
+},
+"date": "16/12/2008",
+"time": "13:35:12"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981365,
+"longitude": 116.345235
+},
+"date": "16/12/2008",
+"time": "13:50:28"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981816,
+"longitude": 116.346235
+},
+"date": "16/12/2008",
+"time": "13:55:08"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981947,
+"longitude": 116.346113
+},
+"date": "16/12/2008",
+"time": "13:59:33"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981986,
+"longitude": 116.346347
+},
+"date": "16/12/2008",
+"time": "14:00:59"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981835,
+"longitude": 116.346311
+},
+"date": "16/12/2008",
+"time": "14:05:34"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981925,
+"longitude": 116.345945
+},
+"date": "16/12/2008",
+"time": "14:10:54"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981857,
+"longitude": 116.345962
+},
+"date": "16/12/2008",
+"time": "14:15:59"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982151,
+"longitude": 116.34589
+},
+"date": "16/12/2008",
+"time": "14:20:19"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981702,
+"longitude": 116.346008
+},
+"date": "16/12/2008",
+"time": "14:22:24"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981469,
+"longitude": 116.346147
+},
+"date": "16/12/2008",
+"time": "14:26:14"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.982231,
+"longitude": 116.345882
+},
+"date": "16/12/2008",
+"time": "14:30:24"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981674,
+"longitude": 116.346315
+},
+"date": "16/12/2008",
+"time": "14:35:24"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981927,
+"longitude": 116.345865
+},
+"date": "16/12/2008",
+"time": "14:40:54"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.980993,
+"longitude": 116.345976
+},
+"date": "16/12/2008",
+"time": "14:45:56"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981504,
+"longitude": 116.345886
+},
+"date": "16/12/2008",
+"time": "14:50:17"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981384,
+"longitude": 116.345938
+},
+"date": "16/12/2008",
+"time": "14:52:50"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981414,
+"longitude": 116.345749
+},
+"date": "16/12/2008",
+"time": "14:56:47"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.981597,
+"longitude": 116.345895
+},
+"date": "16/12/2008",
+"time": "15:00:58"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.98112,
+"longitude": 116.345876
+},
+"date": "16/12/2008",
+"time": "15:03:13"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.980822,
+"longitude": 116.346002
+},
+"date": "16/12/2008",
+"time": "15:15:58"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.98152,
+"longitude": 116.343778
+},
+"date": "16/12/2008",
+"time": "15:20:34"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.980999,
+"longitude": 116.339661
+},
+"date": "16/12/2008",
+"time": "15:26:59"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.979528,
+"longitude": 116.33879
+},
+"date": "16/12/2008",
+"time": "15:30:59"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.976614,
+"longitude": 116.338886
+},
+"date": "16/12/2008",
+"time": "15:36:09"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.976888,
+"longitude": 116.340664
+},
+"date": "16/12/2008",
+"time": "15:48:24"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.977253,
+"longitude": 116.339135
+},
+"date": "16/12/2008",
+"time": "15:56:59"
+},
+{
+"name": "user 1",
+"places": {
+"latitude": 39.976985,
+"longitude": 116.340451
+},
+"date": "16/12/2008",
+"time": "15:59:34"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97778333,
+"longitude": 116.3388
+},
+"date": "05/08/2007",
+"time": "01:33:30"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.9768,
+"longitude": 116.3393833
+},
+"date": "05/08/2007",
+"time": "01:40:07"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97891667,
+"longitude": 116.33875
+},
+"date": "05/08/2007",
+"time": "01:45:22"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.98171667,
+"longitude": 116.3374667
+},
+"date": "05/08/2007",
+"time": "01:50:26"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.98176667,
+"longitude": 116.3372167
+},
+"date": "05/08/2007",
+"time": "02:17:08"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.98188333,
+"longitude": 116.3394333
+},
+"date": "05/08/2007",
+"time": "02:20:15"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.98045,
+"longitude": 116.3417833
+},
+"date": "05/08/2007",
+"time": "02:25:16"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97983333,
+"longitude": 116.3454333
+},
+"date": "05/08/2007",
+"time": "02:30:07"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.9793,
+"longitude": 116.3473667
+},
+"date": "05/08/2007",
+"time": "04:03:17"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97998333,
+"longitude": 116.3420167
+},
+"date": "05/08/2007",
+"time": "04:07:36"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.98045,
+"longitude": 116.33905
+},
+"date": "05/08/2007",
+"time": "04:11:27"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.98046667,
+"longitude": 116.3388167
+},
+"date": "05/08/2007",
+"time": "04:33:53"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97983333,
+"longitude": 116.3393167
+},
+"date": "05/08/2007",
+"time": "04:35:06"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97991667,
+"longitude": 116.3428833
+},
+"date": "05/08/2007",
+"time": "04:40:23"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97975,
+"longitude": 116.3454333
+},
+"date": "05/08/2007",
+"time": "04:43:35"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97965,
+"longitude": 116.34605
+},
+"date": "05/08/2007",
+"time": "07:25:01"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97875,
+"longitude": 116.3470333
+},
+"date": "05/08/2007",
+"time": "07:28:00"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.9758,
+"longitude": 116.34735
+},
+"date": "05/08/2007",
+"time": "07:32:02"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97335,
+"longitude": 116.3466167
+},
+"date": "05/08/2007",
+"time": "07:36:53"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.9731,
+"longitude": 116.3466667
+},
+"date": "05/08/2007",
+"time": "07:45:13"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.96308333,
+"longitude": 116.3468833
+},
+"date": "05/08/2007",
+"time": "07:48:11"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.95653333,
+"longitude": 116.3521833
+},
+"date": "05/08/2007",
+"time": "07:51:16"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.9567,
+"longitude": 116.3611167
+},
+"date": "05/08/2007",
+"time": "07:55:50"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.95676667,
+"longitude": 116.3634833
+},
+"date": "05/08/2007",
+"time": "08:00:24"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.95665,
+"longitude": 116.3670333
+},
+"date": "05/08/2007",
+"time": "08:04:48"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.95578333,
+"longitude": 116.3699833
+},
+"date": "05/08/2007",
+"time": "08:17:16"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.9573,
+"longitude": 116.3727
+},
+"date": "05/08/2007",
+"time": "08:22:16"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.95096667,
+"longitude": 116.3729833
+},
+"date": "05/08/2007",
+"time": "08:32:09"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.94805,
+"longitude": 116.37265
+},
+"date": "05/08/2007",
+"time": "08:35:17"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.9466,
+"longitude": 116.3874167
+},
+"date": "05/08/2007",
+"time": "08:40:36"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.94628333,
+"longitude": 116.3875333
+},
+"date": "05/08/2007",
+"time": "08:56:35"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.94613333,
+"longitude": 116.3877833
+},
+"date": "05/08/2007",
+"time": "09:00:52"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.94613333,
+"longitude": 116.3877833
+},
+"date": "05/08/2007",
+"time": "09:00:52"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.90451667,
+"longitude": 116.4551333
+},
+"date": "05/08/2007",
+"time": "09:48:30"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.90546667,
+"longitude": 116.4571167
+},
+"date": "05/08/2007",
+"time": "09:52:00"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.87473333,
+"longitude": 116.4547667
+},
+"date": "05/08/2007",
+"time": "09:59:35"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.8467,
+"longitude": 116.4661667
+},
+"date": "05/08/2007",
+"time": "10:04:09"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.80765,
+"longitude": 116.4723833
+},
+"date": "05/08/2007",
+"time": "10:10:28"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.79968333,
+"longitude": 116.47835
+},
+"date": "05/08/2007",
+"time": "10:14:55"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.79891667,
+"longitude": 116.4853667
+},
+"date": "05/08/2007",
+"time": "10:19:17"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.80658333,
+"longitude": 116.4673667
+},
+"date": "05/08/2007",
+"time": "10:37:12"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.82166667,
+"longitude": 116.4495833
+},
+"date": "05/08/2007",
+"time": "10:41:51"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.83516667,
+"longitude": 116.44065
+},
+"date": "05/08/2007",
+"time": "10:50:34"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.85155,
+"longitude": 116.4394
+},
+"date": "05/08/2007",
+"time": "10:55:07"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.85733333,
+"longitude": 116.4389167
+},
+"date": "05/08/2007",
+"time": "11:02:44"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.85733333,
+"longitude": 116.4389167
+},
+"date": "05/08/2007",
+"time": "11:02:44"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.89866667,
+"longitude": 116.4558667
+},
+"date": "05/08/2007",
+"time": "11:11:15"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.89866667,
+"longitude": 116.4558667
+},
+"date": "05/08/2007",
+"time": "11:11:15"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.95185,
+"longitude": 116.45515
+},
+"date": "05/08/2007",
+"time": "11:20:00"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.95185,
+"longitude": 116.45515
+},
+"date": "05/08/2007",
+"time": "11:20:00"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.96708333,
+"longitude": 116.3762833
+},
+"date": "05/08/2007",
+"time": "11:30:24"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.96708333,
+"longitude": 116.3762833
+},
+"date": "05/08/2007",
+"time": "11:30:24"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97166667,
+"longitude": 116.3592833
+},
+"date": "05/08/2007",
+"time": "11:40:13"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.98035,
+"longitude": 116.3473333
+},
+"date": "05/08/2007",
+"time": "11:50:21"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97861667,
+"longitude": 116.3444167
+},
+"date": "05/08/2007",
+"time": "15:45:08"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97795,
+"longitude": 116.3409333
+},
+"date": "05/08/2007",
+"time": "15:50:14"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97655,
+"longitude": 116.3388
+},
+"date": "05/08/2007",
+"time": "15:55:19"
+},
+{
+"name": "user 2",
+"places": {
+"latitude": 39.97696667,
+"longitude": 116.3376
+},
+"date": "05/08/2007",
+"time": "16:01:20"
+}
+]
+}
