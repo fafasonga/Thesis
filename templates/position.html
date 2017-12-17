@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Geolocation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!--    map stylesheet-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw==" crossorigin="" />
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="static/css/mycss.css">
+    <!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--    bootrap-slider stylesheet-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/css/bootstrap-slider.css" integrity="sha256-g/Yx9XZ2VfCMlHajAkDvUaloh0BijzCWNMAr7krsZwk=" crossorigin="anonymous" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--    map js-->
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin="">
+</script>
+    <!--    bootstrap-slider-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/bootstrap-slider.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script type="text/javascript" src="static/js/moment.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+</head>
+
+
+<body>
+    <nav class="navbar-inverse navbar-static-top">
+        <div class="container">
+            <p class="navbar-text navbar-left"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>PositioningSystem</p>
+        </div>
+    </nav>
+    <div id="map" style="width: auto;height: 600px;"></div>
+    <br>
+    <br>
+    <div align="center">
+        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-step="1" data-slider-value="0" />
+    </div>
+    <span id="ex1CurrentSliderValLabel">Current time: <span id="ex1SliderVal"></span></span>
+    <br>
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" onclick="singleSPeed()">1X</button>
+        <button type="button" class="btn btn-default" onclick="doubleSPeed()">2X</button>
+        <button type="button" class="btn btn-default " onclick="qtrSPeed()">4X</button>
+    </div>
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" onclick="setUser1()">user1</button>
+        <button type="button" class="btn btn-default" onclick="setUser2()">user2</button>
+    </div>
+    <!-- <label class="btn btn-primary ">
+        <input type="checkbox" id="check1" autocomplete="off" onclick="setUser1()">user_1
+     </label> 
+    <label class="btn btn-primary ">
+        <input type="checkbox" autocomplete="off" onclick="setUser2()">user_2
+    </label> -->
+
+    <!-- <label class="btn btn-primary "> -->
+        <!-- <input type="checkbox" id="check1" autocomplete="off">User1 -->
+    <!-- </label> -->
+    <!-- <label class="btn btn-primary"> -->
+        <!-- <input type="checkbox" autocomplete="off"> User2 -->
+    <!-- </label> -->
+    <!-- <label class="btn btn-primary"> -->
+        <!-- <input type="checkbox" autocomplete="off"> User3 -->
+    <!-- </label>  -->
+     <!-- <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text navbar-right">Made with bootstrap and leaflet</p>
+        </div>
+    </nav> -->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <p id="records"></p>
+
+    <script>
+        var socket = io('/screens-namespace');
+
+        var url = "http://localhost:8221/test_me/inden.json";
+
+        var currentValue;
+        var max;
+        var min;
+        var int1;
+        var int2;
+        var int4;
+        var value;
+        var x;
+        var y;
+
+        var userdata;
+        var timee;
+        var datee;
+
+        var userpressed = false;
+
+        var xmlrequest = new XMLHttpRequest();
+
+        xmlrequest.onreadystatechange = function() {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    var data = JSON.parse(this.responseText);
+                    //console.log(data)
+                    setData(JSON.parse(this.responseText), true);
+                    init();
+                }
+            }
+        };
+        xmlrequest.open("GET", url, true);
+        xmlrequest.send();
+
+
+        function setData(data, start) {
+            if (data != undefined) {
+                userdata = data.records;
+                //console.log(userdata)
+                for (var i = 0; i < userdata.length; i++)
+                {
+                    x = userdata[i].places.latitude;
+                    y = userdata[i].places.longitude;
+                    timee = userdata[i].time;
+                    datee = userdata[i].date;
+                    coord = [x, y];
+                    //console.log(timee, datee)
+                }
+            }
+        }
+
+
+        var coord;
+        var mkr = L.marker(coord);
+
+        var mymap = L.map('map').setView([40, 116.3999], 13);
+        var popup = L.popup();
+
+
+
+    function updatePosition() {
+        "use strict";
+        socket.on('on x', function (msg) {
+            coord[0] = msg.data;
+        })
+        socket.on('on y', function (msg) {
+            coord[1] = msg.data;
+        })
+        mkr.update();
+        mkr.addTo(mymap);
+        var tim = setInterval(updatePosition, 1);
+        mkr.addTo(mymap);
+    }
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            id: 'mapbox.streets'
+        }).addTo(mymap);
+
+
+
+
+        
+            $('#ex1').slider({
+                formatter: function () {
+                    currentValue = value;
+                    return 'Selected time:' + (moment(value * 1000));
+            }
+        })
+            $("#ex1").on("slideStart", function (slideEvt) {
+            clearInterval(int1)
+            clearInterval(int2)
+            clearInterval(int4)
+            socket.send(slideEvt.value);
+        })
+        $("#ex1").on("slide", function (slideEvt) {
+            $("#ex1SliderVal").text((moment(slideEvt.value * 1000)));
+            socket.send(slideEvt.value);
+        })
+        $("#ex1").on("slideStop", function (slideEvt) {
+            $("#ex1SliderVal").text((moment(slideEvt.value * 1000)));
+            socket.send(slideEvt.value);
+        })
+
+        socket.on('start', function (msg) {
+            min = msg.data;
+            $('#ex1').slider('setAttribute', 'min', min);
+            $('#ex1SliderVal').text((moment(min * 1000).utc()));
+            $("#ex1").slider('refresh');
+            mymap.removeLayer(mkr);
+            console.log(min)
+
+        })
+        socket.on('finish', function (msg) {
+            max = msg.data;
+            $('#ex1').slider('setAttribute', 'max', max);
+            $("#ex1").slider('refresh');
+            console.log(max)
+        })
+    
+
+        var mySlider = $("#ex1").slider();
+
+        function singleSPeed() {
+            clearInterval(int1)
+            clearInterval(int2)
+            clearInterval(int4)
+            value = currentValue;
+            int1 = setInterval("if (value <max){value++};mySlider.slider('setValue',value);$('#ex1SliderVal').text((moment(value * 1000).utc().format('MMMM Do YYYY, h:mm:ss a')));socket.send(value);", 1000);
+        }
+
+        function doubleSPeed() {
+            clearInterval(int1)
+            clearInterval(int2)
+            clearInterval(int4)
+            value = currentValue;
+            int2 = setInterval("if (value <max){value++};mySlider.slider('setValue',value);$('#ex1SliderVal').text((moment(value * 1000).utc().format('MMMM Do YYYY, h:mm:ss a')));socket.send(value);", 500);
+        }
+
+        function qtrSPeed() {
+            clearInterval(int1)
+            clearInterval(int2)
+            clearInterval(int4)
+            value = currentValue;
+            int4 = setInterval("if (value <max){value++};mySlider.slider('setValue',value);$('#ex1SliderVal').text((moment(value * 1000).utc().format('MMMM Do YYYY, h:mm:ss a')));socket.send(value);", 250);
+        }
+        $('#check1').change(function () {
+            if (this.checked) {
+                mymap.addLayer(mkr);
+            }
+            else{
+                mymap.removeLayer(mkr);
+            }
+
+        });
+
+
+        var markersLayer = new L.LayerGroup();
+        var tmp = 0;
+        var step = 1;
+        mapMarkers: [];
+
+
+        var User1Data = [];
+        var User2Data = [];
+            
+
+        var records;
+
+        function init(){
+
+            markersLayer.addTo(mymap);
+
+            userdata.forEach(function(records){
+                if(records.name == 'user 1'){
+                    User1Data.push(records);
+                    //console.log(records)
+                }else{
+                    User2Data.push(records);
+                }        
+            });
+
+            User1Data.sort(function(a, b) {
+                return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
+                console.log(a.date)
+            
+            });
+
+            User2Data.sort(function(a, b) {
+                return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
+            
+            });       
+
+
+            var user1Pressed;
+            var cnt = 0;   
+            setInterval(function()
+            {
+                if(userpressed){
+                    $('.slider-handle').css("left", tmp++);
+
+                    cnt = 0;
+                    if(records != undefined){
+                        for(var t=0; t<step; t++){
+                            markersLayer.addLayer(L.marker([records[t].places.latitude, records[t].places.longitude]));                
+                        }
+                        if(step >= records.length){
+                                step = 1;
+                                tmp = 0;
+                        }else step++;
+                    }
+                }
+            }, 1000);
+        }
+
+
+        function setUser1()
+        {
+            userpressed = !userpressed;
+            user1Pressed = true;
+            var tmp = 0;
+            var step = 1;
+            records = User1Data;
+            markersLayer.clearLayers();
+            mymap.removeLayer(markersLayer);
+            markersLayer.addTo(mymap);
+        }
+
+        function setUser2()
+        {
+            userpressed = !userpressed;
+            user1Pressed = false;
+            var tmp = 0;
+            var step = 1;
+            records = User2Data;
+            markersLayer.clearLayers();
+            mymap.removeLayer(markersLayer);
+            markersLayer.addTo(mymap);
+        }
+
+</script>
+</body>
+</html>
