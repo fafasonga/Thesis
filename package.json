@@ -27,10 +27,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fafasonga/test_me.git"
+    "url": "git+https://github.com/fafasonga/Thesis.git"
   },
   "bugs": {
-    "url": "https://github.com/fafasonga/test_me/issues"
+    "url": "https://github.com/fafasonga/Thesis/issues"
   },
-  "homepage": "https://github.com/fafasonga/test_me#readme"
+  "homepage": "https://github.com/fafasonga/Thesis#readme"
 }
