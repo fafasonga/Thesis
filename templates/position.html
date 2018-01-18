@@ -11,6 +11,8 @@
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="static/css/mycss.css">
+    <!-- Customized Icon -->
+<link rel="stylesheet" href="css/ionicons.min.css">
     <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!--    bootrap-slider stylesheet-->
@@ -83,6 +85,20 @@
 
         var markersLayer = new L.LayerGroup();
         var userpressed = false;
+
+        var myIcon = L.icon({
+            iconUrl: '/png/ios7-location.png',
+            iconSize: [50, 45],
+            iconAnchor: [5, 23],
+            popupAnchor: [0, -11]
+        }),
+        myIcon2 = L.icon({
+            iconUrl: '/png/marker3.png',
+            iconSize: [40, 35],
+            iconAnchor: [5, 23],
+            popupAnchor: [0, -11]
+        });
+
 
         //Retrieving Json data stored in the server
         var xmlrequest = new XMLHttpRequest();
@@ -160,9 +176,6 @@
                 $("#ex1SliderVal").text(value[slideEvt.value]);
                 tmp = slideEvt.value;
 
-                for(var i = 0; i < slideEvt.value; ++i)
-                    markersLayer.addLayer(L.marker([records[i].places.latitude, records[i].places.longitude]));
-
                 interval = setInterval(loop, 1000);
             });
 
@@ -193,7 +206,10 @@
                     if(records != undefined){
                         for(var t=0; t<tmp; t++)
                         {
-                            markersLayer.addLayer(L.marker([records[t].places.latitude, records[t].places.longitude]));                
+                            var icon = records[t].name === 'user 1' ? myIcon2 : myIcon;
+                            markersLayer.addLayer(L.marker([records[t].places.latitude, records[t].places.longitude], {icon: icon})
+                                .bindPopup('<a target="_blank">' + records[t].name + '<br>' +'Time: '+ records[t].time + '<br>' +'Date: ' + records[t].date + '</a>' )
+                                .addTo(mymap));            
                         }
                         if(step >= records.length){
                                 step = 1;
