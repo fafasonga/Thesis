@@ -30,6 +30,13 @@
 <script type="text/javascript" src="static/js/moment.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<style>
+  /* Style to reverse the caret icon from pointing downwards to upwards */
+  .caret.caret-up {
+    border-top-width: 0;
+    border-bottom: 4px solid #fff;
+  }
+  </style>
 </head>
 
 
@@ -47,17 +54,36 @@
     </div>
     <span id="ex1CurrentSliderValLabel">Current time: <span id="ex1SliderVal"></span></span>
     <br>
+
+    
+
+    
+
+    <div class="dropup">
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" onclick="singleSPeed()">1X</button>
+            <button type="button" class="btn btn-default" onclick="doubleSPeed()">2X</button>
+            <button type="button" class="btn btn-default " onclick="qtrSPeed()">4X</button>
+        </div>
+
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default" onclick="singleSPeed()">1X</button>
-        <button type="button" class="btn btn-default" onclick="doubleSPeed()">2X</button>
-        <button type="button" class="btn btn-default " onclick="qtrSPeed()">4X</button>
+        <button type="button" class="btn btn-default" onclick="AllUsers()">All Users</button>
+
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Users List 
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a class="btn btn-default" onclick="setUser1()">user1</a></li>
+            <li><a class="btn btn-default" onclick="setUser2()">user2</a></li>
+        </ul>
+    <a href="https://github.com/fafasonga/Thesis/tree/master/Map_trajectory" class="btn btn-default">Animations Users</a>
     </div>
-    <div class="btn-group" role="group" aria-label="...">
+
+
+    <!-- <div class="btn-group" role="group" aria-label="...">
         <button type="button" class="btn btn-default" onclick="AllUsers()">Allusers</button>
         <button type="button" class="btn btn-default" onclick="setUser1()">user1</button>
         <button type="button" class="btn btn-default" onclick="setUser2()">user2</button>
-    </div>
-    <a href="https://github.com/fafasonga/Thesis/tree/master/Map_trajectory" class="btn btn-default">Animations Users</a>
+    </div> -->
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <p id="records"></p>
@@ -74,7 +100,7 @@
         // Call a method on the slider  
         var value = [];
 
-        var userdata;
+        var userdata = [];
         var records = [];
         var tmp = 0;
         var step = 1;
@@ -87,13 +113,13 @@
         var userpressed = false;
 
         var myIcon = L.icon({
-            iconUrl: '/png/ios7-location.png',
-            iconSize: [50, 45],
+            iconUrl: '/png/marker5.png',
+            iconSize: [50, 35],
             iconAnchor: [5, 23],
             popupAnchor: [0, -11]
         }),
         myIcon2 = L.icon({
-            iconUrl: '/png/marker3.png',
+            iconUrl: '/png/marker.png',
             iconSize: [40, 35],
             iconAnchor: [5, 23],
             popupAnchor: [0, -11]
@@ -122,6 +148,9 @@
                 userdata = data.records;
                 for (var i = 0; i<userdata.length; i++) {
                     value.push(userdata[i].time);
+                    // if (userdata[i] == value[i]) {
+                    //     userdata.push(records);
+                    // }
                 }
             }
         }
@@ -144,24 +173,46 @@
 
             markersLayer.addTo(mymap);
 
-            userdata.forEach(function(records){
-                if(records.name == 'user 1'){
-                    User1Data.push(records);
-                }else{
-                    User2Data.push(records);
-                }        
+            // value.sort(value_sort_asc);
+            // value.push(userdata);
+
+            // document.write('<p>Dates sorted in ascending order (oldest to newest):</p>');
+            // for (var i = 0; i < dates.length; i++) {
+            //     document.write(i + ': ' + dates[i] + '<br>');
+            // }
+
+            // var value_sort_asc = function (value1, value2) {
+            //     // This is a comparison function that will result in times being sorted in ASCENDING order. 
+            //     if (value1 > value2) return 1;
+            //     if (value1 < value2) return -1;
+            //     return 0;
+            // };
+
+
+            // document.write('<p>Time sorted in ascending order (oldest to newest):</p>');
+                  // for (var i = 0; i < value.length; i++) {
+                  //     document.write(i + ': ' + value[i] + '<br>');
+                    //}
+
+            userdata.sort(function(a, b) {
+                 // a and b will be two instances of our object from our list
+
+                 return a.time - b.time
+                userdata.push(records);
             });
 
-            User1Data.sort(function(a, b) {
-                return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
-                User1Data.push(records);
-            
-            });
 
-            User2Data.sort(function(a, b) {
-                return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
-                User2Data.push(records)
-            });
+            // User1Data.sort(function(a, b) {
+            //     // a and b will be two instances of our object from our list
+
+            //     return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
+            //     User1Data.push(records);
+            // });
+
+            // User2Data.sort(function(a, b) {
+            //     return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
+            //     User2Data.push(records)
+            // });
 
             
 
@@ -253,7 +304,6 @@
             var tmp = 0;
             var step = 1;
             records = userdata;
-            //console.log(records);
             markersLayer.clearLayers();
             mymap.removeLayer(markersLayer);
             markersLayer.addTo(mymap);
@@ -277,8 +327,6 @@
 
             interval = setInterval(loop, 250);
         }
-    
-
-</script>
+    </script>
 </body>
 </html>
