@@ -137,16 +137,13 @@
                 userdata = data.records;
                 for (var i = 0; i<userdata.length; i++) {
                     value.push(userdata[i].time);
-                    // if (userdata[i] == value[i]) {
-                    //     userdata.push(records);
-                    // }
                 }
             }
         }
 
 
         //Creating a map with coordinates of Beinjing
-        var mymap = L.map('map').setView([40, 116.3999], 13);
+        var mymap = L.map('map').setView([39.92553946, 116.45336151], 12);
 
         //adding tile layers to our map
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -162,46 +159,35 @@
 
             markersLayer.addTo(mymap);
 
-            // value.sort(value_sort_asc);
-            // value.push(userdata);
-
-            // document.write('<p>Dates sorted in ascending order (oldest to newest):</p>');
-            // for (var i = 0; i < dates.length; i++) {
-            //     document.write(i + ': ' + dates[i] + '<br>');
-            // }
-
-            // var value_sort_asc = function (value1, value2) {
-            //     // This is a comparison function that will result in times being sorted in ASCENDING order. 
-            //     if (value1 > value2) return 1;
-            //     if (value1 < value2) return -1;
-            //     return 0;
-            // };
-
-
-            // document.write('<p>Time sorted in ascending order (oldest to newest):</p>');
-                  // for (var i = 0; i < value.length; i++) {
-                  //     document.write(i + ': ' + value[i] + '<br>');
-                    //}
-
-            userdata.sort(function(a, b) {
-                 // a and b will be two instances of our object from our list
-
-                 return a.time - b.time
-                userdata.push(records);
+            userdata.forEach(function(records){
+                if(records.name == 'user 1'){
+                    User1Data.push(records);
+                    //console.log(records)
+                }else{
+                    User2Data.push(records);
+                }        
             });
 
+    
+            userdata = userdata.sort(function(v1,v2){
+                // a and b will be two instances of our object from our list
+                if (v1.time < v2.time) return -1;
+                if (v1.time > v2.time) return 1;
+                return 0;
+            })
 
-            // User1Data.sort(function(a, b) {
-            //     // a and b will be two instances of our object from our list
 
-            //     return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
-            //     User1Data.push(records);
-            // });
+            User1Data = User1Data.sort(function(a, b) {
+                // a and b will be two instances of our object from our list
 
-            // User2Data.sort(function(a, b) {
-            //     return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
-            //     User2Data.push(records)
-            // });
+                return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
+                User1Data.push(records);
+            });
+
+            User2Data = User2Data.sort(function(a, b) {
+                return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
+                User2Data.push(records)
+            });
 
             
 
@@ -243,7 +229,7 @@
                     if(tmp > userdata.length)
                         tmp = 0;
                     cnt = 0;
-                    if(records != undefined){
+                    if(userdata != undefined){
                         for(var t=0; t<tmp; t++)
                         {
                             var icon = records[t].name === 'user 1' ? myIcon2 : myIcon;
@@ -269,6 +255,8 @@
             var tmp = 0;
             var step = 1;
             records = User1Data;
+            console.log(User1Data);
+
             markersLayer.clearLayers();
             mymap.removeLayer(markersLayer);
             markersLayer.addTo(mymap);
@@ -282,6 +270,8 @@
             var tmp = 0;
             var step = 1;
             records = User2Data;
+            console.log(User2Data);
+
             markersLayer.clearLayers();
             mymap.removeLayer(markersLayer);
             markersLayer.addTo(mymap);
@@ -293,6 +283,7 @@
             var tmp = 0;
             var step = 1;
             records = userdata;
+
             markersLayer.clearLayers();
             mymap.removeLayer(markersLayer);
             markersLayer.addTo(mymap);
