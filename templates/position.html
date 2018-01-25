@@ -54,7 +54,7 @@
     <span id="ex1CurrentSliderValLabel">Current time: <span id="ex1SliderVal"></span></span>
     <br>
 
-    <div class="dropup">
+    <div class="dropup" onload="list_user()">
         <div class="btn-group" role="group" aria-label="...">
             <button type="button" class="btn btn-default" onclick="singleSPeed()">1X</button>
             <button type="button" class="btn btn-default" onclick="doubleSPeed()">2X</button>
@@ -162,9 +162,10 @@
             userdata.forEach(function(records){
                 if(records.name == 'user 1'){
                     User1Data.push(records);
-                    //console.log(records)
+                    // console.log(User1Data)
                 }else{
                     User2Data.push(records);
+                    // console.log(User2Data)
                 }        
             });
 
@@ -175,20 +176,6 @@
                 if (v1.time > v2.time) return 1;
                 return 0;
             })
-
-
-            User1Data = User1Data.sort(function(a, b) {
-                // a and b will be two instances of our object from our list
-
-                return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
-                User1Data.push(records);
-            });
-
-            User2Data = User2Data.sort(function(a, b) {
-                return new Date((a.date + " " + a.time).toString()) - new Date((b.date + " " + b.time).toString())
-                User2Data.push(records)
-            });
-
             
 
             mySlider = $("#ex1").slider({
@@ -246,6 +233,21 @@
                 }
             }
 
+        function list_user()
+        {
+            var x = [];
+            for (var i=0; i< records.length; i++) {
+                if(x.indexOf(records[i].name) < 0){
+                    x.append(records[i].name)
+                }
+            }
+            for (var i =0; i< x.length; i++) {
+                // $("#userslist").append('<li><a class="btn btn-default" onclick="setUser1()">x[i]</a></li>');  
+                $("#userslist").append('<option value="volvo">Vo2</option>');
+                document.getElementById("#userslist").InnerHTML = '<option value="volvo">Vo2</option>';
+            }
+        }
+
 
         function setUser1()
         {
@@ -255,7 +257,7 @@
             var tmp = 0;
             var step = 1;
             records = User1Data;
-            console.log(User1Data);
+            // console.log(User1Data);
 
             markersLayer.clearLayers();
             mymap.removeLayer(markersLayer);
@@ -270,7 +272,7 @@
             var tmp = 0;
             var step = 1;
             records = User2Data;
-            console.log(User2Data);
+            // console.log(User2Data);
 
             markersLayer.clearLayers();
             mymap.removeLayer(markersLayer);
