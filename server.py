@@ -18,7 +18,7 @@ class RequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 
         cmd = [file_name]
 
-        print content_type
+        print (content_type);
         if content_type == 'application/x-www-form-urlencoded':
             cmd.append(data)
 
@@ -31,7 +31,7 @@ class RequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
         p.stdout.close()
         p.stderr.close()
 
-httpd = SocketServer.TCPServer(("", PORT), RequestHandler)
+httpd = SocketServer.TCPServer(("", PORT), RequestHandler);
 
-print "serving at port", PORT
+print ("serving at port", PORT);
 httpd.serve_forever()

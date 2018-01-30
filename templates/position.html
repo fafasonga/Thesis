@@ -64,18 +64,48 @@
     <div class="btn-group" role="group" aria-label="...">
         <button type="button" class="btn btn-default" onclick="AllUsers()">All Users</button>
 
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Users List 
+    <button id="userslist" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Users List 
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-            <li><a class="btn btn-default" onclick="setUser1()">user1</a></li>
-            <li><a class="btn btn-default" onclick="setUser2()">user2</a></li>
+            <li><a type="button" class="btn btn-default" onclick="setUser1()">user1</a></li>
+            <li><a type="button" class="btn btn-default" onclick="setUser2()">user2</a></li>
+            <li><a type="button" class="btn btn-default" onclick="list_user()">List All Users</a></li>
         </ul>
-    <a href="https://github.com/fafasonga/Thesis/tree/master/Map_trajectory" class="btn btn-default">Animations Users</a>
+        <a href="https://github.com/fafasonga/Thesis/tree/master/Map_trajectory" class="btn btn-default">Animations Users</a>
     </div>
 
+    
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <p id="records"></p>
+
+    <script type="text/javascript">
+
+        function list_user() {
+            
+            var listu = $("#userslist");
+            var optionValues =[];
+            $(records).each(function () {
+                var option = $("<option />");
+
+                if($.inArray(this.name, optionValues) >-1){
+                    $(this.name).remove()
+                }else{
+                    optionValues.push(this.name);
+
+                    //Set Users Name in Text part.
+                    option.html(this.name);
+ 
+                    //Set Users CustomerId in Value part.
+                    option.val(this.name);
+ 
+                    //Add the Option element to DropDownList.
+                    listu.append(option);
+                }
+            });
+        }
+
+    </script>
 
     <script>
         var socket = io('/screens-namespace');
@@ -170,6 +200,7 @@
             });
 
     
+            // Sorting our data according to the time
             userdata = userdata.sort(function(v1,v2){
                 // a and b will be two instances of our object from our list
                 if (v1.time < v2.time) return -1;
@@ -232,21 +263,6 @@
                     }
                 }
             }
-
-        function list_user()
-        {
-            var x = [];
-            for (var i=0; i< records.length; i++) {
-                if(x.indexOf(records[i].name) < 0){
-                    x.append(records[i].name)
-                }
-            }
-            for (var i =0; i< x.length; i++) {
-                // $("#userslist").append('<li><a class="btn btn-default" onclick="setUser1()">x[i]</a></li>');  
-                $("#userslist").append('<option value="volvo">Vo2</option>');
-                document.getElementById("#userslist").InnerHTML = '<option value="volvo">Vo2</option>';
-            }
-        }
 
 
         function setUser1()
