@@ -39,6 +39,8 @@
   </style>
 </head>
 
+
+
 <body>
     <nav class="navbar-inverse navbar-static-top">
         <div class="container">
@@ -61,23 +63,23 @@
             <button type="button" class="btn btn-default " onclick="qtrSPeed()">4X</button>
         </div>
 
-    <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default" onclick="AllUsers()">All Users</button>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" onclick="AllUsers()">All Users</button>
 
-    <button id="userslist" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Users List 
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a type="button" class="btn btn-default" onclick="setUser1()">user1</a></li>
-            <li><a type="button" class="btn btn-default" onclick="setUser2()">user2</a></li>
-            <li><a type="button" class="btn btn-default" onclick="list_user()">List All Users</a></li>
-        </ul>
-        <a href="https://github.com/fafasonga/Thesis/tree/master/Map_trajectory" class="btn btn-default">Animations Users</a>
+            <button id="userslist" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Users List 
+                <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a type="button" class="btn btn-default" onclick="setUser1()">user1</a></li>
+                        <li><a type="button" class="btn btn-default" onclick="setUser2()">user2</a></li>
+                        <li><a type="button" class="btn btn-default" onclick="list_user()">List All Users</a></li>
+                    </ul>
+            <a href="https://github.com/fafasonga/Thesis/tree/master/Map_trajectory" class="btn btn-default">Animations Users</a>
+        </div>
     </div>
 
     
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <p id="records"></p>
 
     <script type="text/javascript">
 
@@ -185,6 +187,7 @@
         }).addTo(mymap);
 
 
+        //Initialization function
         function init(){
 
             markersLayer.addTo(mymap);
@@ -209,11 +212,12 @@
             })
             
 
+            //Providing values to the slider
             mySlider = $("#ex1").slider({
-            formatter: function (val) {
-                return 'Selected time:' + value[val]; 
-            }
-        });
+                formatter: function (val) {
+                    return 'Selected time:' + value[val]; 
+                }
+            });
 
 
             mySlider.on("slideStop", function(slideEvt) {
@@ -238,6 +242,7 @@
             interval = setInterval(loop, 1000);
         }
 
+        //Function for drawing markers on the map with respect of the slider values
         function loop()
             {
                 if(userpressed){
@@ -246,25 +251,27 @@
 
                     if(tmp > userdata.length)
                         tmp = 0;
-                    cnt = 0;
-                    if(userdata != undefined){
-                        for(var t=0; t<tmp; t++)
-                        {
-                            var icon = records[t].name === 'user 1' ? myIcon2 : myIcon;
-                            markersLayer.addLayer(L.marker([records[t].places.latitude, records[t].places.longitude], {icon: icon})
-                                .bindPopup('<a target="_blank">' + records[t].name + '<br>' +'Time: '+ records[t].time + '<br>' +'Date: ' + records[t].date + '</a>' )
-                                .addTo(mymap));            
+                        cnt = 0;
+                        if(userdata != undefined){
+                            for(var t=0; t<tmp; t++)
+                                {
+                                    var icon = records[t].name === 'user 1' ? myIcon2 : myIcon;
+                                    markersLayer.addLayer(L.marker([records[t].places.latitude, records[t].places.longitude], {icon: icon})
+                                    .bindPopup('<a target="_blank">' + records[t].name + '<br>' +'Time: '+ records[t].time + '<br>' +'Date: ' + records[t].date + '</a>' )
+                                    .addTo(mymap));            
+                                }
+
+                                if(step >= records.length){
+                                    step = 1;
+                                    tmp = 0;
+                                }else step++;
+                            $("#ex1SliderVal").text(records[t].time);
                         }
-                        if(step >= records.length){
-                                step = 1;
-                                tmp = 0;
-                        }else step++;
-                        $("#ex1SliderVal").text(records[t].time);
-                    }
                 }
             }
 
 
+        //Function to display the data of User 1 on the map
         function setUser1()
         {
             userpressed = !userpressed;
@@ -280,6 +287,7 @@
             markersLayer.addTo(mymap);
         }
 
+        //Function to display the data of User 2 on the map
         function setUser2()
         {
             userpressed = !userpressed;
@@ -295,6 +303,7 @@
             markersLayer.addTo(mymap);
         }
 
+        //Function to display the data of All Users on the map
         function AllUsers()
         {
             userpressed = !userpressed;
@@ -307,12 +316,14 @@
             markersLayer.addTo(mymap);
         }
 
+        //Function to display the normal speed of the slider
         function singleSPeed() {
             clearInterval(interval)
 
             interval = setInterval(loop, 1000);
         }
 
+        //Function to double the speed of the slider
         function doubleSPeed() {
             clearInterval(interval)
 
@@ -320,6 +331,7 @@
 
         }
 
+        //Function to quadriple the speed of the slider
         function qtrSPeed() {
             clearInterval(interval)
 
